@@ -5,8 +5,6 @@ class ApiService {
   final Dio _dio;
   ApiService(this._dio) {
     _dio.options.baseUrl = kBaseUrl;
-    _dio.options.connectTimeout = const Duration(seconds: 10);
-    _dio.options.receiveTimeout = const Duration(seconds: 10);
   }
 
   Future<Map<String, dynamic>> get({required String endPoint}) async {
