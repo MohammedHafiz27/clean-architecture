@@ -14,7 +14,9 @@ class SimilarBooksListview extends StatelessWidget {
           itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.symmetric(horizontal: 5),
-              child: CustomBookImage(),
+              child: CustomBookImage(
+                img: 'https://www.lulu.com/create?srsltid=AfmBOoprQ_BihUcCVLnqwwwv_z4Aecoj-KaxNUFFXAqLmpVbyvqSVWbn',
+              ),
             );
           }),
     );

@@ -6,7 +6,7 @@ class MyblocObserver extends BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
     super.onChange(bloc, change);
-    log('change: $change');
+    log(change.toString());
   }
 
   @override

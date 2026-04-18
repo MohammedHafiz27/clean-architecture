@@ -30,14 +30,15 @@ abstract class AppRouter {
       GoRoute(
         path: kHomeView,
         builder: (context, state) => BlocProvider(
-          create: (context) => FeatureadBooksCubit(FetchFeaturedBooksUseCase(getIt.get<HomeRepoImpl>())),
+          create: (context) =>
+              FeatureadBooksCubit(FetchFeaturedBooksUseCase(getIt.get<HomeRepoImpl>()))..fetchFeaturedBooks(),
           child: const HomeView(),
         ),
       ),
       GoRoute(
         path: kBookDetailsView,
         builder: (context, state) => BlocProvider(
-          create: (context) => NewsetBooksCubit(FetchNewestBooksUseCase(getIt.get<HomeRepoImpl>())),
+          create: (context) => NewsetBooksCubit(FetchNewestBooksUseCase(getIt.get<HomeRepoImpl>()))..fetchNewestBooks(),
           child: const BookDetailsView(),
         ),
       ),
