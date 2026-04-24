@@ -7,6 +7,14 @@ class FeatureadBooksInitial extends FeatureadBooksState {}
 
 class FeatureadBooksLoading extends FeatureadBooksState {}
 
+class FeatureadBooksPaginationLoading extends FeatureadBooksState {}
+
+class FeatureadBooksPaginationFailure extends FeatureadBooksState {
+  final String errorMessage;
+
+  FeatureadBooksPaginationFailure({required this.errorMessage});
+}
+
 class FeatureadBooksSuccess extends FeatureadBooksState {
   final List<BookEntity> books;
 
