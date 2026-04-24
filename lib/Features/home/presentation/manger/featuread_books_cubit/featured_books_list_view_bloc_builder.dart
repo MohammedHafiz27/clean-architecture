@@ -1,5 +1,6 @@
 import 'package:bookly/Features/home/domain/entities/book_entity.dart';
 import 'package:bookly/Features/home/presentation/manger/featuread_books_cubit/featuread_books_cubit.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/featured_books_list_view_loading.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,7 +29,7 @@ class _FeaturedBooksListViewBlocConsumerState extends State<FeaturedBooksListVie
         } else if (state is FeatureadBooksFailure) {
           return const Center(child: Text('Failed to load featured books'));
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return FeaturedBooksListViewLoading();
         }
       },
       listener: (BuildContext context, FeatureadBooksState state) {

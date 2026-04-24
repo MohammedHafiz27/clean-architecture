@@ -13,11 +13,17 @@ class _CustomFadingWidgetState extends State<CustomFadingWidget> with SingleTick
   late AnimationController animationController;
   @override
   void initState() {
-    animationController = AnimationController(vsync: this);
+    animationController = AnimationController(vsync: this, duration: Duration(milliseconds: 700));
     fadeAnimation = Tween<double>(begin: 0.2, end: 0.8).animate(animationController);
     animationController.repeat(reverse: true);
 
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
